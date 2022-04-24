@@ -1,5 +1,5 @@
-# Data-Structures
-SinglyLinkedList/n
+# Data-Structures  
+SinglyLinkedList
 Insert a new node at beginning
 Insert a new node at any position
 Insert a new node at end
