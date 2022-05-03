@@ -101,6 +101,40 @@ class SinglyLinkedList{
         temp.next=null;
         return temp.next;
     }
+//Reverse a Singly Linked List
+    public Node reverse(){
+        Node current = head;
+        Node previous = null;
+        Node next = null;
+        while(current!=null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        return previous;
+    }
+    public void displayreverse(Node head1){
+        Node current = head1;
+        while(current!=null)
+        {
+            System.out.print(current.data+"->");
+            current=current.next;
+        }
+        System.out.println("null");
+    }
+//To find middle Node of SinglyLinkedList
+    public Node findmiddle(){
+        Node slwptr = head;
+        Node fstptr = head;
+        
+        while(fstptr!=null && fstptr.next!=null){
+            slwptr=slwptr.next;
+           
+            fstptr=fstptr.next.next;
+        }
+        return slwptr;
+    }
 //Search an element in a SinglyLinkedList
     public boolean search(int key){
         Node current = head;
@@ -177,6 +211,17 @@ class SinglyLinkedList{
         {
             System.out.println("Element not present");
         }
+        System.out.println("Reverse a Singly Linked List");
+        //Node newnode = sll.reverse();
+        //sll.displayreverse(newnode);
+        
+        System.out.print("Find the middle node of the Singly Linked List: ");
+        Node middle = sll.findmiddle();
+        System.out.println(middle.data);
+        System.out.println("Find the nth node from the end of the Singly Linked List: ");
+        Node nthend = sll.nend();
+       
+        
         
     }
 }
