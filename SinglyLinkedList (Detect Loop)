@@ -1,0 +1,58 @@
+public class SinglyLinkedList{
+    Node head;
+    public static class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+            this.next=null;
+        }
+    }
+    SinglyLinkedList(){
+        this.head = null;
+    }
+    
+    public Node findstartingloop(Node slowptr){
+        Node temp=this.head;
+        while(slowptr!=temp){
+            slowptr=slowptr.next;
+            temp=temp.next;
+        }
+        return temp;
+    }
+    
+    public Node detectloop(){
+        Node fastptr = this.head;
+        Node slowptr = this.head;
+        Node temp = null;
+        while(fastptr!=null && fastptr.next!=null){
+            fastptr=fastptr.next.next;
+            slowptr=slowptr.next;
+            if(slowptr == fastptr){
+                temp = findstartingloop(slowptr);
+                break;
+            }
+        }
+        return temp;
+    }
+    
+    public static void main(String args[]){
+        System.out.println("Singly Linked List");
+        SinglyLinkedList sll = new SinglyLinkedList();
+        sll.head = new Node(1);
+        Node first = new Node(2);
+        Node second = new Node(3);
+        Node third = new Node(4);
+        Node fourth = new Node(5);
+        Node fifth = new Node(6);
+        sll.head.next = first;
+        first.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = fifth;
+        fifth.next = second;
+        Node starting = sll.detectloop();
+        System.out.println("Detect the strating node: "+starting.data);
+        
+    }
+}
