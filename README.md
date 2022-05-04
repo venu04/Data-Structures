@@ -14,3 +14,5 @@ Data-Structures
 12. Find the middle node in a SinglyLinkedList<br>
 
 ![image](https://user-images.githubusercontent.com/43407734/166408814-459595a5-c768-4b03-8bb7-e63c557c0969.png)
+![image](https://user-images.githubusercontent.com/43407734/166722678-d3dc358c-e6d2-493f-9d66-ca85836a8106.png)
+
